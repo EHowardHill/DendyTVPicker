@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Navigator"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true">
+
+            <LinearLayout
+                android:id="@+id/btn_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:nextFocusDown="@id/recycler_view"
+                android:background="@drawable/bg_menu_selector">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_arrow_up"
+                    android:contentDescription="@string/parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parent"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:nextFocusDown="@id/recycler_view"
+                android:background="@drawable/bg_menu_selector">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_home"
+                    android:contentDescription="@string/home" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:layout_marginStart="8dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_current_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="/storage/emulated/0"
+        android:textColor="#AAAAAA"
+        android:textSize="14sp"
+        android:paddingBottom="12dp"
+        android:maxLines="1"
+        android:ellipsize="start" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
+
+</LinearLayout>
